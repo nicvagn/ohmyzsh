@@ -28,7 +28,7 @@ autoload -Uz add-zsh-hook
 add-zsh-hook precmd _update_prompt_vars
 
 PROMPT='%{$fg_bold[red]%}%n@%m%{$reset_color%}%{$fg[white]%}:%~%{$reset_color%} $(git_prompt_info)$(_git_untracked)
-%{$fg[red]%}> %{$reset_color%}'
+%{$fg[red]%}>%{$reset_color%} '
 
 RPROMPT='${_PROMPT_VENV}${_PROMPT_CONTAINER}'
 
