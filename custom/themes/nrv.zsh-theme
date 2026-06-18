@@ -13,7 +13,7 @@ function _git_untracked() {
 }
 function _update_prompt_vars() {
     if [[ -n $VIRTUAL_ENV ]]; then
-        _PROMPT_VENV="%F{green}(${VIRTUAL_ENV:t})%f "
+        _PROMPT_VENV="%F{green}(${VIRTUAL_ENV:t})%f"
     else
         _PROMPT_VENV=""
     fi
@@ -27,8 +27,12 @@ function _update_prompt_vars() {
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd _update_prompt_vars
 
-PROMPT='%{$fg_bold[red]%}%n@%m%{$reset_color%}%{$fg[white]%}:%~%{$reset_color%} $(git_prompt_info)$(_git_untracked)
-%{$fg[red]%}>%{$reset_color%} '
+ PROMPT='%{$fg_bold[red]%}%n@%m%{$reset_color%}%{$fg[white]%}:%~%{$reset_color%} $(git_prompt_info)$(_git_untracked)
+%{$fg[red]%}> %{$reset_color%}'
+
+
+#PROMPT='%{$fg_bold[red]%}%n@%m%{$reset_color%}%{$fg[white]%}:%~%{$reset_color%} $(git_prompt_info)$(_git_untracked)
+#%{$reset_color%}'
 RPROMPT='${_PROMPT_VENV}${_PROMPT_CONTAINER}'
 
 #  LocalWords:  fg
