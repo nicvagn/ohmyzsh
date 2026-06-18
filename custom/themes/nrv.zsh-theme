@@ -13,7 +13,7 @@ function _git_untracked() {
 }
 function _update_prompt_vars() {
     if [[ -n $VIRTUAL_ENV ]]; then
-        _PROMPT_VENV="%F{green}(${VIRTUAL_ENV:t})%f "
+        _PROMPT_VENV="%F{green}(${VIRTUAL_ENV:t})%f"
     else
         _PROMPT_VENV=""
     fi
